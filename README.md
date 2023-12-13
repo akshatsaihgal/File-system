@@ -64,8 +64,21 @@ Directory class:
 • grep(pattern): Search the contents of a file for the specified pattern.
  Print the line number and  line where the pattern is found.
 
-•clone(): Creates a new instance of the File class with the same name and contents as the original file.
- 
+• clone(): Creates a new instance of the File class with the same name and contents as the original file.
+
+
+• pickle module is used for serializing and deserializing the file system state. Serialization is the process of converting a Python object into a byte stream, and deserialization is the process of reconstructing the object from the byte stream.
+ • save_state Method:
+  The pickle.dump function is used to serialize the self.root (root directory of the file system) into a binary file.
+  The serialized data is then written to a file specified by the filename parameter using the with open(filename, "wb") as file context manager.
+
+  • load_state Method:
+   The pickle.load function is used to deserialize the data from a binary file specified by the filename parameter.
+   The deserialized data is assigned to self.root, and the current directory (self.current_directory) is also set to the root.
+   python
+
+
+
 Example usage: 
  Create an instance of InMemoryFileSystem (fs).
  Perform various operations on the in-memory file system, including: B.
